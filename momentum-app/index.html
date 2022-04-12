@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section id="secTime">
+        <time id="time"></time>
+        <h1>
+            <span id="greeting"></span>
+            <span id="name" contenteditable="true"></span>
+            <span id="h2Focus">What Is Your Focus For Today?</span>
+            <span id="focus" contenteditable="true"></span>
+        </h1>
+    </section>
+
+    <!-- TODO LIST -->
+    <div class="container" id="containerId">
+        <h1 id="todo-h1">To Do List</h1>
+        <div id="inputId">
+            <input id="inputField" type="text"><button id="addToDo">+</button>
+        </div>
+        <div class="to-dos" id="toDoContainer">
+        </div>
+    </div>
+
+    <div id="showHideDiv">
+        <button onclick="showHide()" id="showHide">To Do List</button>
+    </div>
+
+
+    <!-- quotes -->
+    <div id="quotes">
+        <span id="quoteAdd">Add your own quote now!</span> <br>
+        <input id="addQuote" type="text"><button id="addQuoteButton">+</button>
+        <div id="diffQuotes"> “The purpose of our lives is to be happy.”</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

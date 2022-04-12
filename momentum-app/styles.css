@@ -1,0 +1,247 @@
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: serif;
+        height: 45vw;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    
+    #secTime {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 8vw;
+        bottom: 0;
+        margin: auto;
+    }
+    
+    #time {
+        font-size: 9vw;
+        color: white;
+        text-shadow: .17vw .17vw black;
+        font-weight: 600;
+    }
+    
+    #greeting,
+    #name,
+    #quotes {
+        color: white;
+        font-weight: 600;
+        text-shadow: .17vw .17vw black;
+    }
+    
+    h1 {
+        font-size: 2.5vw;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #h2Focus,
+    #focus {
+        color: white;
+        text-shadow: .17vw .17vw black;
+    }
+    
+    #quotes {
+        font-size: 1.8vw;
+        bottom: 1vw;
+        right: 0;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        text-align: center;
+    }
+    /* To Do List */
+    
+    .container {
+        height: 35vw;
+        width: 20vw;
+        top: 5vw;
+        left: 3vw;
+        position: absolute;
+        border-radius: 1.5vw;
+        background-color: rgba(82, 110, 42, 0.8);
+    }
+    
+    #showHide {
+        height: 3vw;
+        width: 10vw;
+        font-weight: bold;
+        background-color: transparent;
+        color: #eee;
+        position: absolute;
+        right: 1vw;
+        bottom: .8vw;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        font-size: 1.5vw;
+    }
+    
+    #todo-h1 {
+        text-align: center;
+    }
+    
+    #inputId {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #toDoContainer {
+        text-indent: 1.5vw;
+    }
+    
+    #inputField,
+    #addQuote {
+        width: 16vw;
+        height: 2.1vw;
+        border-width: 0;
+        border: .1vw solid black;
+        outline: none;
+        font-size: 1.8vw;
+        vertical-align: middle;
+    }
+    
+    #addQuote {
+        width: 35vw;
+        text-indent: .5vw;
+    }
+    
+    #addToDo,
+    #addQuoteButton {
+        height: 2.2vw;
+        width: 2.2vw;
+        border: .15vw solid black;
+        vertical-align: middle;
+        font-size: 1.8vw;
+        cursor: pointer;
+    }
+    
+    #addQuoteButton {
+        border-radius: 10vmin;
+    }
+    
+    #addQuote {
+        border-radius: 10vmin;
+    }
+    
+    .paragraph-styling {
+        margin: 0;
+        cursor: pointer;
+        font-size: 1.5vw;
+    }
+    
+    .to-dos {
+        margin-top: 3vmin;
+    }
+    
+    @media (max-width: 700px) {
+        #time {
+            font-size: 12vw;
+        }
+        h1 {
+            font-size: 4vw;
+        }
+        #quotes {
+            bottom: 2vw;
+        }
+        #addQuote {
+            height: 3vw;
+            width: 40vw;
+        }
+        #quoteAdd,
+        #diffQuotes {
+            font-size: 2.5vw;
+        }
+        #addQuoteButton {
+            height: 3vw;
+            width: 3vw;
+            font-size: 2.5vw;
+        }
+        #showHide {
+            bottom: 1vw;
+            height: 5vw;
+            width: 15vw;
+            font-size: 2vw;
+        }
+        #containerId {
+            margin-left: 8vw;
+            margin-top: 1vw;
+            width: 75vw;
+            height: 25vw;
+        }
+        .paragraph-styling {
+            font-size: 3vw;
+        }
+        #sectime {
+            padding-top: 100vw;
+        }
+    }
+    
+    @media (max-width: 450px) {
+        h1 {
+            margin-top: 20vw;
+            font-size: 6vw;
+        }
+        #h2Focus {
+            margin-top: 10vw;
+        }
+        #quotes {
+            margin-bottom: 8vw;
+        }
+        #quoteAdd,
+        #diffQuotes {
+            font-size: 4vw;
+        }
+        #showHide {
+            font-size: 3vw;
+            margin-right: 2vw;
+            margin-bottom: 1vw;
+        }
+        .container {
+            height: 140vw;
+            width: 90vw;
+            margin-left: 3vw;
+            border-radius: 3vw;
+            background-color: rgba(82, 110, 42, 1);
+        }
+        #inputField {
+            height: 7vw;
+            width: 70vw;
+            font-size: 4vw;
+            margin-top: 2vw;
+        }
+        #addToDo {
+            height: 7vw;
+            width: 7vw;
+            font-size: 5vw;
+            margin-top: 2vw;
+        }
+        #toDoContainer {
+            text-indent: 2vw;
+            font-size: 20vw;
+        }
+        #todo-h1 {
+            margin-top: 2vw;
+            font-size: 7vw;
+        }
+        .paragraph-styling {
+            font-size: 6vw;
+        }
+    }
