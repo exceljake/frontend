@@ -11,7 +11,7 @@
     
     body {
         margin: 0;
-        height: 120vh;
+        height: 80vh;
     }
     
      :root {
@@ -76,4 +76,35 @@
     .login,
     .signup {
         padding-left: 1em;
+    }
+    /* hide */
+    
+    .hide {
+        display: none;
+        visibility: hidden;
+    }
+    /* user-dashboard */
+    
+    .user-profile-title-div {
+        width: 80vw;
+        background-color: var(--main-color-1);
+        margin-top: 20px;
+        height: 100px;
+        margin-left: 250px;
+    }
+    
+    .user-profile-content {
+        height: 30vw;
+        width: 30vw;
+        border: 2px solid var(--main-color-3);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 43vw;
+        margin-top: 5vw;
+    }
+    
+    .user-profile-content-icon {
+        margin-bottom: 10vw;
     }

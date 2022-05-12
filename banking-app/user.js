@@ -6,6 +6,34 @@
  *income
  *expense
  */
+
+//hide functions 
+const homeBtn = document.querySelector('.home'),
+    loginBtn = document.querySelector('.login'),
+    signupBtn = document.querySelector('.signup'),
+
+    homeContent = document.querySelector('.home-content'),
+    loginContent = document.querySelector('.login-content'),
+    signupContent = document.querySelector('.signup-content');
+
+
+homeBtn.addEventListener('click', function() {
+    homeContent.classList.remove('hide');
+    loginContent.classList.add('hide');
+    signupContent.classList.add('hide');
+});
+
+loginBtn.addEventListener('click', function() {
+    homeContent.classList.add('hide');
+    loginContent.classList.remove('hide');
+    signupContent.classList.add('hide');
+});
+
+signupBtn.addEventListener('click', function() {
+    homeContent.classList.add('hide');
+    loginContent.classList.add('hide');
+    signupContent.classList.remove('hide');
+});
 //updating JSON usersList and transactionHistory
 function updateJSONUsers() {
     users = JSON.stringify(usersList);
@@ -58,29 +86,47 @@ function Transaction(type, amount) {
 }
 //login 
 
-const loginMobileNumber = document.querySelector('.login-mobile-number'),
-    loginPassword = document.querySelector('.login-password'),
-    loginBtn = document.querySelector('.loginSubmit');
+// const loginMobileNumber = document.querySelector('.login-mobile-number'),
+//     loginPassword = document.querySelector('.login-password'),
+//     loginBtn = document.querySelector('.loginSubmit');
 
-loginBtn.addEventListener('click', function() {
-    let found = usersList.find((user) => {
-        return user.mobile === loginMobileNumber.value;
-    });
-    if (found) {
-        window.location.href = "user-dashboard.html";
-    } else {
-        return "Account not found";
-    }
-})
+// loginBtn.addEventListener('click', function() {
+// let found = usersList.find((user) => {
+//     return user.mobile === loginMobileNumber.value;
+// });
 
+//     let exist = usersList.find((user) => {
+//         return user.mobile === loginMobileNumber.value;
+//     })
+
+//     if (exist) {
+//         alert("Successfully logged in!");
+//         window.location.pathname = "user-dashboard.html";
+//     } else {
+//         alert("Account does not exist!");
+//     }
+// });
 //signup
+
+function signIn(e) {
+    const loginMobileNumber = document.querySelector('.login-mobile-number');
+    let usersList = JSON.parse(localStorage.getItem('usersList')) || [];
+    let exist = formData.length &&
+        usersList.some(user => user.mobile == loginMobileNumber);
+    if (!exist) {
+        alert("Incorrect login credentials");
+    } else {
+        location.href = "user-dashboard.html";
+    }
+    e.preventDefault();
+}
 
 const signupMobileNumber = document.querySelector('.signup-mobile-number'),
     signupFullname = document.querySelector('.signup-fullname'),
     signupPassword = document.querySelector('.signup-password'),
-    signupBtn = document.querySelector('.signupSubmit');
+    signupSubmitBtn = document.querySelector('.signupSubmit');
 
-signupBtn.addEventListener('click', function() {
+signupSubmitBtn.addEventListener('click', function() {
     let found = usersList.find((user) => {
         return user.mobile === signupMobileNumber.value;
     });
@@ -89,8 +135,11 @@ signupBtn.addEventListener('click', function() {
         alert('Account already exists');
     } else {
         createUser(signupMobileNumber.value, signupPassword.value, signupFullname.value);
-        alert("Successfully created an account.")
+        alert("Successfully created an account.");
+        location.href = 'user-dashboard.html';
     }
 })
+
+
 
 // console.log(usersList);

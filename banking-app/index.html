@@ -31,12 +31,13 @@
                     We have been operating since the 1980's and have perfected financial services to everyone who commits with us. Please login to your account below, or sign up if you don't have an account yet.
                 </p>
             </div>
-            <div class="home">
+
+            <div class="home-content">hello</div>
 
             </div>
-            <div class="login">
+            <div class="login-content hide">
                 <h1 class="login-title">Login to your account</h1> <br>
-                <form action="">
+                <form role="form" onsubmit="signIn(e);" autocomplete="off">
                     <div class="form-item">
                         <label for="mobile-number"></label>
                         <input type="text" required placeholder="Mobile Number" class="login-mobile-number">
@@ -45,11 +46,11 @@
                         <label for="password"></label>
                         <input type="password" required placeholder="Password" class="login-password">
                     </div>
-                    <button type="submit" class="loginSubmit">Login</button>
+                    <button type="submit" class="loginSubmit" onclick="">Login</button>
                 </form>
             </div>
 
-            <div class="signup">
+            <div class="signup-content hide">
                 <h1 class="signup-title">Signup for a new account</h1> <br>
                 <form action="">
                     <div class="form-item">
@@ -69,7 +70,6 @@
             </div>
         </main>
     </section>
-
 
     <script src="user.js"></script>
 </body>
