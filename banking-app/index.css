@@ -1,0 +1,79 @@
+    /*Color Scheme
+*Green 
+*Black  
+* 
+*/
+    
+    * {
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    
+    body {
+        margin: 0;
+        height: 120vh;
+    }
+    
+     :root {
+        --main-color-1: #FF7F50;
+        --main-color-2: #32CD32;
+        --main-color-3: #333;
+    }
+    
+    .content {
+        margin-left: 250px;
+    }
+    /* header and nav */
+    
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: #f7f7f7;
+        border-right: 2px solid var(--main-color-3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .header-button {
+        display: inline-block;
+        text-decoration: none;
+        padding: 5px 15px;
+        font-size: 0.9em;
+        font-weight: bold;
+        color: var(--main-color-1);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border: none;
+        background-color: transparent;
+    }
+    
+    .header-button:hover {
+        color: var(--main-color-2);
+    }
+    
+    .bank-name-logo {
+        display: block;
+    }
+    /* Bank introduction */
+    
+    div.body-wrapper {
+        /* background-color: rgb(255, 127, 80, .2); */
+        /* background-color: rgb(255, 69, 0, .1); */
+        background-color: rgb(255, 165, 0, .2);
+        opacity: 85%;
+        padding-left: 1em;
+        padding-bottom: 1em;
+        padding-right: 1em;
+        margin-top: 25px;
+    }
+    /* login */
+    
+    .login,
+    .signup {
+        padding-left: 1em;
+    }
