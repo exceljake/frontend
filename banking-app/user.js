@@ -87,70 +87,29 @@ function Transaction(type, amount) {
 //login 
 
 const loginMobileNumber = document.querySelector('.login-mobile-number'),
-    // loginPassword = document.querySelector('.login-password'),
+    loginPassword = document.querySelector('.login-password'),
     loginBtnSubmit = document.querySelector('.loginSubmit');
 
 loginBtnSubmit.addEventListener('click', function() {
-    //nakukuha nya si usersList pero hndi nagaalert si exist
-    // var usersList = localStorage.getItem("usersList");
-    // JSON.parse(usersList);
-    // let exist = usersList.find((user) => {
-    //     return user.mobile === loginMobileNumber.value;
-    // })
-    // alert(exist);
     index = usersList.findIndex(function(user) {
         return user.mobile === loginMobileNumber.value;
     })
 
-    if (index !== -1) {
-        // alert("Successfully logged in!");
-        window.location.href = "google.com";
-        // } else {
-        //     alert("Account does not exist!");
-        // }
+    if (index === -1) {
+        alert("Account does not exist!");
+        return
+    }
+
+    if (usersList[index].password !== loginPassword.value) {
+        alert("Wrong password!")
+        return
     } else {
-        alert('Wrong!')
+        alert("Successfully logged in!")
+        window.location.href = "user-dashboard.html";
     }
 })
 
-
-
-// loginSubmit.addEventListener('click', function() {
-//     index = clientList.findIndex(function(item) {
-//         return item.email === loginEmail.value;
-//     })
-//     if (index === -1) {
-//         alert('User does not exist!');
-//         return;
-//     }
-
-//     if (clientList[index].password !== loginPassword.value) {
-//         alert('Incorrect password.');
-//         return;
-//     } else { // User and password matches so redirect to appropriate dashboard
-//         if (clientList[index].isAdmin) {
-//             window.location.href = "admin-dashboard.html";
-//         } else {
-//             localStorage.setItem("currentUserIndex", JSON.stringify(index));
-//             window.location.href = "user-dashboard.html";
-//         }
-//     }
-// });
-
 //signup
-
-// function signIn(e) {
-//     const loginMobileNumber = document.querySelector('.login-mobile-number');
-//     let usersList = JSON.parse(localStorage.getItem('usersList')) || [];
-//     let exist = formData.length &&
-//         usersList.some(user => user.mobile == loginMobileNumber);
-//     if (!exist) {
-//         alert("Incorrect login credentials");
-//     } else {
-//         location.href = "user-dashboard.html";
-//     }
-//     e.preventDefault();
-// }
 
 const signupMobileNumber = document.querySelector('.signup-mobile-number'),
     signupFullname = document.querySelector('.signup-fullname'),
@@ -158,19 +117,26 @@ const signupMobileNumber = document.querySelector('.signup-mobile-number'),
     signupSubmitBtn = document.querySelector('.signupSubmit');
 
 signupSubmitBtn.addEventListener('click', function() {
-    let found = usersList.find((user) => {
+    let found = usersList.findIndex(function(user) {
         return user.mobile === signupMobileNumber.value;
     });
 
-    if (found) {
+    if (found !== -1) {
         alert('Account already exists');
     } else {
         createUser(signupMobileNumber.value, signupPassword.value, signupFullname.value);
-        alert("Successfully created an account.");
-        window.location = 'user-dashboard.html';
+        alert("Successfully created an account!");
+        window.location.href = "user-dashboard.html";
     }
 })
 
 
 
 // console.log(usersList);
+
+// spare codes
+//href
+// window.location.href = "user-dashboard.html";
+// document.location.href = "user-dashboard.html"
+// window.location.replace = "user-dashboard.html";
+// setTimeout(function() { document.location.href = "user-dashboard.html;" }, 100);

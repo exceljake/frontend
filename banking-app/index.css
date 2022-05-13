@@ -4,6 +4,7 @@
 * 
 */
     
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
     * {
         box-sizing: border-box;
         font-family: sans-serif;
@@ -83,9 +84,14 @@
         display: none;
         visibility: hidden;
     }
-    /* user-dashboard */
+    /* ***************/
+    /* USER-DASHBOARD */
+    /* ***************
+    *
+    */
+    /* USER PROFILE TITLE */
     
-    .user-profile-title-div {
+    .user-dashboard-title-div {
         width: 80vw;
         background-color: var(--main-color-1);
         margin-top: 20px;
@@ -93,18 +99,32 @@
         margin-left: 250px;
     }
     
+    .user-dashboard-title-text {
+        font-size: 80px;
+        color: var(--main-color-2);
+        text-align: center;
+        font-family: 'Dancing Script', cursive;
+        text-shadow: 2px 2px var(--main-color-3);
+        ;
+    }
+    /* USER PROFILE CONTENT*/
+    
     .user-profile-content {
-        height: 30vw;
-        width: 30vw;
+        height: 350px;
+        width: 350px;
         border: 2px solid var(--main-color-3);
         border-radius: 20px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-left: 43vw;
-        margin-top: 5vw;
+        margin-left: 45vw;
+        margin-top: 70px;
     }
     
-    .user-profile-content-icon {
-        margin-bottom: 10vw;
+    .upc-text-details {
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 800;
+        color: var(--main-color-3);
     }
