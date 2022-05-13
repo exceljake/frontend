@@ -50,7 +50,8 @@ Priority for Today (May 13 2022)
 ### withdraws money from user balance
 - amount will be deducted from user balance
 
-# Transfer function --- 
+----- progress after avion session ---
+# Transfer function --- done
 
 ### will create new transactions -- done
 ### every transfer will add a new transaction for the from.expenses and to.incomes -- done
@@ -59,4 +60,16 @@ Priority for Today (May 13 2022)
 - will create a new transaction then push to incomes of receiver, and expenses of sender
 - if sender has insufficient amount, will return false
 
-###
+# Admin account --- done
+
+### change login conditions, add an admin condition --- done
+
+# Date and time on Transactions --- done
+
+### current date will be displayed on the transaction
+
+# User History (for admin) --- done
+
+### every transaction will be pushed to Users History
+
+### users history is a compilation of all transactions with mobile number, and unique ID, for admin features
