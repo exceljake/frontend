@@ -8,8 +8,9 @@
  * expenses - [] of Transaction of Expense
  */
 
-export let usersHistory = [];
 export let users = [];
+
+
 export let adminAccount = { mobile: 123456, password: "adminpassword", fullname: "admin", isAdmin: true };
 users.push(adminAccount);
 
@@ -31,7 +32,7 @@ export default function User(mobile, password, fullname, isAdmin) {
 export function createUser(mobile, password, fullname, isAdmin) {
     let found = users.find((u) => {
         return u.mobile === mobile;
-    });
+    })
     if (found) {
         return undefined;
     } else {
@@ -40,6 +41,8 @@ export function createUser(mobile, password, fullname, isAdmin) {
         return user;
     }
 }
+
+
 
 export function register(mobile, password, fullname) {
     let user = createUser(mobile, password, fullname, isAdmin === false);
@@ -50,9 +53,8 @@ export function register(mobile, password, fullname) {
 
 export function login(mobile, password) {
     let existing = users.find((user) => {
-            return user.mobile === mobile;
-        })
-        // console.log(existing);
+        return user.mobile === mobile;
+    })
     if (existing) {
         if (existing.isAdmin === true && existing.password === password) {
             return true;

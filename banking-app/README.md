@@ -68,8 +68,37 @@ Priority for Today (May 13 2022)
 
 ### current date will be displayed on the transaction
 
-# User History (for admin) --- done
+Priority for today (05/14/22)
 
-### every transaction will be pushed to Users History
+MOST PRIO 
 
-### users history is a compilation of all transactions with mobile number, and unique ID, for admin features
+# delete usershistory --- done
+# Function showHistory --- done
+
+1. takes params users, mobile - check
+2. declare  empty array - check
+3. push user.incomes and user.expenses to array - check
+4. Sort by date - done
+5. return history - done
+
+### showhistory will display a table showing all the transactions of EACH user --- done
+
+# Refactor total balance to fit showHistory - (pending)
+
+ console.log(incomesExpensesArray[i].amount += sum); = returns a value of 0 0 
+
+ - current progress: been able to show amounts that has type deposit
+
+ - blockers is i cant add them
+
+# create an array to push both incomes and expenses to serve as an admin history list -- (pending)
+
+# Budget App
+
+### change addExpense code to balance can be negative
+### add a deleteExpense method  
+
+# Transfer error handling
+
+### sender does not exist, return undefined
+### receiver does not exist, return undefined
