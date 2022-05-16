@@ -38,13 +38,14 @@ deposit(edcel, 900)
     // addExpense(users, 100, 1000000002)
 withdraw(edcel, 300)
 withdraw(edcel, 400)
-console.log(addIncome(users, 100, 1000000002))
-console.log(addExpense(users, 100, 1000000002))
-    // deleteExpense(1000000002, 100279)
-    // console.log(edcel)
-    // console.log(showHistory(users, 1000000002));
-    // showHistory(users, 1000000002);
-    // totalBalanceTransactionHistory(users, 1000000002)
-    // console.log(edcel);
-    // console.log(showHistory(users, 1000000002))
-    // console.log(totalBalanceTransactionHistory(users, 1000000002))
+    // console.log(addIncome(users, 100, 1000000002))
+    // console.log(addExpense(users, 100, 1000000002))
+console.log(edcel);
+// deleteExpense(1000000002, 100279)
+// console.log(edcel)
+// console.log(showHistory(users, 1000000002));
+// showHistory(users, 1000000002);
+// totalBalanceTransactionHistory(users, 1000000002)
+// console.log(edcel);
+// console.log(showHistory(users, 1000000002))
+// console.log(totalBalanceTransactionHistory(users, 1000000002))
