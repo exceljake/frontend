@@ -13,7 +13,7 @@ export let adminAccount = { mobile: 123456, password: "adminpassword", fullname:
 users.push(adminAccount);
 
 export function User(mobile, password, fullname, isAdmin) {
-    this.mobile = mobile;
+    this.mobile = parseInt(mobile);
     this.password = password;
     this.fullname = fullname;
     this.isAdmin = isAdmin;
@@ -28,40 +28,35 @@ export function User(mobile, password, fullname, isAdmin) {
 // if not, add to the list
 // and then return user
 export function createUser(mobile, password, fullname, isAdmin) {
-    let found = users.find((u) => {
-        return u.mobile === mobile;
-    })
+    let found = users.find((u) => u.mobile === mobile);
+
     if (found) return undefined;
+
     let user = new User(mobile, password, fullname, isAdmin === false);
     users.push(user);
     return user;
 }
 
-
-
-
 export function register(mobile, password, fullname) {
     let user = createUser(mobile, password, fullname, isAdmin === false);
 
-    if (user !== undefined) console.info("error");
-    else console.error("error");
+    if (user !== undefined) return user;
+    else return undefined;
 }
 
 export function login(mobile, password) {
-    let existing = users.find((user) => {
-        return user.mobile === mobile;
-    })
-    if (existing) {
-        if (existing.isAdmin === true && existing.password === password) {
-            return true;
-        }
-        if (existing.password === password) {
-            return true;
-        } else {
-            return false;
-        }
-        // }
-    } else {
-        return undefined;
-    }
+    // let existing = users.find((user) => {
+    //     return user.mobile === mobile;
+    mobile = parseInt(mobile);
+    let found = users.find((u) => u.mobile === mobile);
+
+    if (!found) return undefined;
+
+    //will direct to admin dashboard in DOM
+    if (found.isAdmin === true && found.password === password) return true;
+
+    //will direct to user dashboard in DOM
+    if (found.isAdmin === true && found.password === password) return true;
+
+    else return undefined;
 }

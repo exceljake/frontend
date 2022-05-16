@@ -23,7 +23,7 @@
 - type -> income/expense string
 
 
-Priority for Today (May 13 2022)
+# Priority for Today (May 13 2022)
 
 # Sign Up (functions first, then DOM) 
 
@@ -51,6 +51,7 @@ Priority for Today (May 13 2022)
 - amount will be deducted from user balance
 
 ----- progress after avion session ---
+
 # Transfer function --- done
 
 ### will create new transactions -- done
@@ -68,7 +69,7 @@ Priority for Today (May 13 2022)
 
 ### current date will be displayed on the transaction --- done
 
-Priority for today (05/14/22)
+# Priority for today (05/14/22)
 
 # delete usershistory --- done
 # Function showHistory --- done
@@ -83,7 +84,7 @@ Priority for today (05/14/22)
 ### showhistory will display a table showing all the transactions of EACH user --- done
 
 
-Priority for today (05/15/22)
+# Priority for today (05/15/22)
 # Refactor total balance to fit showHistory - (done)
 
 - attach code of totalBalance to showHistory
@@ -121,7 +122,11 @@ Priority for today (05/15/22)
 
 # Arrange functions for readability - done
 
-PRIORITY 5/16/22
+# PRIORITY 5/16/22
 
-# function parse time -- done
+- function parse time -- done
+
+- refactor codes -- done
+
+
 
