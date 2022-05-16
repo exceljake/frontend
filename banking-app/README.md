@@ -66,14 +66,13 @@ Priority for Today (May 13 2022)
 
 # Date and time on Transactions --- done
 
-### current date will be displayed on the transaction
+### current date will be displayed on the transaction --- done
 
 Priority for today (05/14/22)
 
-MOST PRIO 
-
 # delete usershistory --- done
 # Function showHistory --- done
+
 
 1. takes params users, mobile - check
 2. declare  empty array - check
@@ -83,22 +82,46 @@ MOST PRIO
 
 ### showhistory will display a table showing all the transactions of EACH user --- done
 
-# Refactor total balance to fit showHistory - (pending)
 
- console.log(incomesExpensesArray[i].amount += sum); = returns a value of 0 0 
+Priority for today (05/15/22)
+# Refactor total balance to fit showHistory - (done)
 
- - current progress: been able to show amounts that has type deposit
+- attach code of totalBalance to showHistory
+- what happened was the outcome of showhistory was just the result of totalIncomes + total expense
+- i realized i had to make another function to separate showHistory and totalBalanceTransactionHistory.
 
- - blockers is i cant add them
+# Create function totalBalanceTransactionHistory - done
 
-# create an array to push both incomes and expenses to serve as an admin history list -- (pending)
+### will show final balance of transaction history by subtracting total income and total expense
+
+- take params user, mobile
+- find mobile
+- if existing, will access incomes array, get the total sum
+- will acess expenses array, get total difference
+- will subtract total income from total expenses
+- return
+
 
 # Budget App
 
-### change addExpense code to balance can be negative
-### add a deleteExpense method  
+### change addExpense code to balance can be negative -- done
+### add a deleteExpense method and deleteIncome --- done
 
-# Transfer error handling
+1. takes params mobile, transactionId -- done
+2. find mobile -- done
+3. if found, find the expense which satisfies the transactionId -- done
+4. get amount then add to userbalance -- done
 
-### sender does not exist, return undefined
-### receiver does not exist, return undefined
+### add a deleteIncome method
+
+1. takes params mobile, transactionId -- done
+2. find mobile -- done
+3. if found, find the income which satisfies the transactionId -- done
+4. get amount then subtract to userbalance -- done
+
+# Arrange functions for readability - done
+
+PRIORITY 5/16/22
+
+# function parse time -- done
+

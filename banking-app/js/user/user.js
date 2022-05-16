@@ -9,12 +9,10 @@
  */
 
 export let users = [];
-
-
 export let adminAccount = { mobile: 123456, password: "adminpassword", fullname: "admin", isAdmin: true };
 users.push(adminAccount);
 
-export default function User(mobile, password, fullname, isAdmin) {
+export function User(mobile, password, fullname, isAdmin) {
     this.mobile = mobile;
     this.password = password;
     this.fullname = fullname;
@@ -33,14 +31,12 @@ export function createUser(mobile, password, fullname, isAdmin) {
     let found = users.find((u) => {
         return u.mobile === mobile;
     })
-    if (found) {
-        return undefined;
-    } else {
-        let user = new User(mobile, password, fullname, isAdmin === false);
-        users.push(user);
-        return user;
-    }
+    if (found) return undefined;
+    let user = new User(mobile, password, fullname, isAdmin === false);
+    users.push(user);
+    return user;
 }
+
 
 
 
@@ -69,30 +65,3 @@ export function login(mobile, password) {
         return undefined;
     }
 }
-
-// export function createAdmin(mobile, password, fullname) {
-
-//     return adminAccount;
-// }
-
-// let admin = {
-//     email: "admin-piggybank@gmail.com",
-//     password: "piggy123",
-//     isAdmin: true
-// };
-// clientList.push(admin);
-// }
-// })();
-
-// export function createAdmin(mobile, password, fullname, isAdmin) {
-//     let found = users.find((u) => {
-//         return u.mobile === mobile;
-//     });
-//     if (found) {
-//         return undefined;
-//     } else {
-//         let user = new User(mobile, password, fullname, isAdmin === true);
-//         users.push(user);
-//         return user;
-//     }
-// }
