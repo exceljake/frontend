@@ -4,74 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murphy Bank Inc.</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="img/murphy-bank-logo-removedbg.png">
+    <link rel="icon" href="./img/icons/savourbank-logo-removebg.png">
+    <title>SavourBank</title>
 </head>
 
 <body>
     <nav>
-        <img src="img/murphy-bank-logo-removedbg.png" alt="logo" height="108" width="156" class="bank logo">
-        <button class="home header-button">Home</button>
-        <button class="login header-button">Login</button>
-        <button class="signup header-button">Signup</button>
+        <div class="nav-logo-name">
+            <img src="./img/icons/savourbank-logo-removebg.png" alt="logo" class="nav-logo">
+            <div class="nav-bank-name">SavourBank</div>
+        </div>
+        <div class="nav-button-container">
+            <button class="home-button nav-button">Home</button>
+            <button class="login-button nav-button">Login</button>
+            <button class="register-button nav-button">Register</button>
+        </div>
     </nav>
-
-    <section class="content">
-        <main>
-            <div class="body-wrapper">
-                <h1 id="title"><u>Murphy Bank Inc.</u></h1>
-                <h2 id="subtitle"><em>The wise choice for banking.</em></h2>
-
-                <p>
-                    Welcome Customer, thank you for choosing Murphy Bank Inc.
-                </p>
-                <p>
-                    We have been operating since the 1980's and have perfected financial services to everyone who commits with us. Please login to your account below, or sign up if you don't have an account yet.
-                </p>
+    <div class="content">
+        <section class="home-section">
+            <div class="bg-img-container">
+                <div class="bg-image"></div>
             </div>
-
-            <div class="home-content">hello</div>
-
+            <div class="bank-intro"> <br>
+                <div class="bank-intro-text">
+                    <p>Hello customer,</p>
+                    <p class="second-paragraph-intro"> Welcome to SavourBank! Where our motto is, "Save now, and savour the beauty of life later!" SavourBank has been operating since the 90's, and we are proud to say that in terms of financial services, we have perfected catering it. So
+                        please, login or register to your account by clicking the login or register button. Happy banking!</p>
+                </div>
             </div>
-            <div class="login-content hide">
-                <h1 class="login-title">Login to your account</h1> <br>
-                <form role="form">
-                    <div class="form-item">
-                        <label for="mobile-number"></label>
-                        <input type="text" required placeholder="Mobile Number" class="login-mobile-number">
-                    </div>
-                    <div class="form-item">
-                        <label for="password"></label>
-                        <input type="password" required placeholder="Password" class="login-password">
-                    </div>
-                    <button type="submit" class="loginSubmit" onclick="">Login</button>
-                </form>
+        </section>
+        <section class="login-section hide">
+            <div class="login-content">
+                <div class="logo-login"></div>
+                <div class="login-input-div">
+                    <div class="login-title">Login to your account</div> <br>
+                    <form method="post" action="">
+                        <div class="form-item">
+                            <label for="">Mobile number:</label> <br>
+                            <input type="text" class="mobile-login" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="">Password:</label> <br>
+                            <input type="password" class="password-login" required>
+                        </div>
+                        <button type="submit" class="login-submit">Login</button>
+                    </form>
+                </div>
             </div>
+        </section>
 
-            <div class="signup-content hide">
-                <h1 class="signup-title">Signup for a new account</h1> <br>
-                <form action="user-dashboard.html">
-                    <div class="form-item">
-                        <label for="mobile-number"></label>
-                        <input type="text" required placeholder="Mobile Number" class="signup-mobile-number">
-                    </div>
-                    <div class="form-item">
-                        <label for="fullname"></label>
-                        <input type="text" required placeholder="Full name" class="signup-fullname">
-                    </div>
-                    <div class="form-item">
-                        <label for="password"></label>
-                        <input type="password" required placeholder="Password" class="signup-password">
-                    </div>
-                    <button type="submit" class="signupSubmit">Submit</button>
-                </form>
+        <section class="register-section hide">
+            <div class="register-content">
+                <div class="logo-register"></div>
+                <div class="register-input-div">
+                    <div class="register-title">Register to a new account</div> <br>
+                    <form method="post" action="">
+                        <div class="form-item">
+                            <label for="">Fullname:</label> <br>
+                            <input type="text" class="fullname-register" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="">Mobile number:</label> <br>
+                            <input type="number" class="mobile-register" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="">Password:</label> <br>
+                            <input type="password" class="password-register" required>
+                        </div>
+                        <button type="submit" class="register-submit-button">Submit</button>
+                    </form>
+                </div>
             </div>
-        </main>
-    </section>
-
-    <script src="user.js"></script>
+        </section>
+        <button class="load-data">Load initial data</button>
+    </div>
 </body>
 
 </html>

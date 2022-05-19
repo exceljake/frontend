@@ -5,16 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/user-dashboard.css">
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+
     <nav>
-        <img src="img/murphy-bank-logo-removedbg.png" alt="logo" height="108" width="156" class="bank logo">
-        <button class="user-profile header-button">User Profile</button>
-        <button class="user-transactions header-button">User Transactions</button>
-        <button class="budget-app header-button">Budget App</button>
+        <div class="img-container"> <img src="./img/icons/savourbank-logo-name-removebg.png" class="nav-logo" alt=""></div>
+        <div class="button-container">
+            <button class="user-profile header-button">User Profile</button>
+            <button class="user-transactions header-button">User Transactions</button>
+            <button class="budget-app header-button">Budget App</button>
+            <button class="budget-app-income header-button budget-app-button hide">Income</button>
+            <button class="budget-app-expense header-button budget-app-button hide">Expense</button>
+        </div>
     </nav>
 
     <section class="user-profile-section">
@@ -23,9 +28,9 @@
         </div>
 
         <div class="user-profile-content">
-            <img src="/banking-app/img/icons/user-green-icon.svg" alt="" class="upc-icon"> <br> <br> <br>
+            <div class="upc-text-name upc-text-details">Edcel Jake Aquino</div> <br> <br>
+            <img src="/img/icons/user-green-icon.svg" alt="" class="upc-icon"> <br> <br>
             <div class="upc-text">
-                <div class="upc-text-name upc-text-details">Name: Edcel Jake Aquino</div>
                 <div class="upc-text-mobile upc-text-details">Mobile: 09193552644</div>
                 <div class="upc-text-balance upc-text-details">Balance: 500,000</div>
             </div>
@@ -39,16 +44,23 @@
 
     </section>
 
-    <section class="budget-app-section hide">
+    <section class="budget-app-income-section hide">
         <div class="user-dashboard-title-div">
-            <div class="user-dashboard-title-text">Budget App</div>
+            <div class="user-dashboard-title-text income-text">Budget Income</div>
         </div>
 
     </section>
 
+    <section class="budget-app-expense-section hide">
+        <div class="user-dashboard-title-div">
+            <div class="user-dashboard-title-text expense-title">Budget Expense</div>
+        </div>
 
+    </section>
 
-    <script src="user-dashboard.js"></script>
+    <script type="module" src="./js/user/register-dom.js"></script>
+    <script src="./js/dom-buttons/user-dashboard-buttons.js"></script>
+    <script src="/js/user-dashboard-dom/user-profile-dom.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+ :root {
+    --main-color-1: gold;
+    --main-color-2: #85bb65;
+    --main-color-3: #000000;
+    --main-color-4: #228B22;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+}
+
+.bg-img-container {
+    margin-left: 350px;
+    position: absolute;
+    margin-top: 50px;
+}
+
+.bg-image {
+    background-image: url(../img/icons/savourbank-logo-name-removebg.png);
+    height: 500px;
+    width: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+nav {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 80px;
+    width: 100%;
+    background-color: var(--main-color-1);
+    border-bottom: 5px solid var(--main-color-4);
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    align-items: center;
+}
+
+.nav-logo-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nav-logo {
+    height: 125px;
+    width: 125px;
+}
+
+.nav-bank-name {
+    color: var(--main-color-4);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.nav-button-container,
+.nav-button {
+    font-size: 0.8rem;
+    font-family: inherit;
+    margin: 0 1.5vw 0 1.5vw;
+    color: black;
+    background-color: transparent;
+    font-weight: bold;
+    padding: 5px 10px 5px 10px;
+}
+
+.nav-button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.nav-button:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-button:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom right;
+}
+
+
+/* HOME CONTENT */
+
+.bank-intro {
+    height: 150px;
+    width: 100%;
+    background-color: rgba(255, 215, 0, 0.3);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-paragraph-intro {
+    text-indent: 30px;
+}
+
+.bank-intro-text {
+    max-width: 95%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+
+/* LOGIN CONTENT */
+
+.login-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 30px 50px;
+}
+
+.logo-login {
+    background-image: url(../img/icons/savourbank-logo-name-removebg.png);
+    height: 500px;
+    width: 500px;
+}
+
+
+/* REGISTER CONTENT */
+
+
+/* .register {
+    position: absolute;
+    width: 1000px;
+} */
+
+.register-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 30px 50px;
+}
+
+.logo-register {
+    background-image: url(../img/icons/savourbank-logo-name-removebg.png);
+    height: 500px;
+    width: 500px;
+}

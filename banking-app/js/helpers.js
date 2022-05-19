@@ -1,4 +1,65 @@
-export function parseTime(dateTime) {
+import { createUser } from "./user/user.js";
+
+export let userInitialData = [{
+        fullname: "admin",
+        mobile: 9193552644,
+        password: "admin",
+        isAdmin: true,
+    },
+    {
+        fullname: "user1",
+        mobile: 9293552644,
+        password: "password1",
+        isAdmin: false,
+    },
+    {
+        fullname: "user2",
+        mobile: 9393552644,
+        password: "password2",
+        isAdmin: false,
+    },
+    {
+        fullname: "user3",
+        mobile: 9493552644,
+        password: "password3",
+        isAdmin: false,
+    },
+    {
+        fullname: "user4",
+        mobile: 9593552644,
+        password: "password4",
+        isAdmin: false,
+    },
+    {
+        fullname: "user5",
+        mobile: 9693552644,
+        password: "password5",
+        isAdmin: false,
+    },
+    {
+        fullname: "user6",
+        mobile: 9793552644,
+        password: "password6",
+        isAdmin: false,
+    },
+    {
+        fullname: "1",
+        mobile: 1,
+        password: "1",
+        isAdmin: false,
+    }
+];
+
+export function loadData() {
+    userInitialData.forEach((d) => {
+        return createUser(d.mobile, d.password, d.fullname, d.isAdmin);
+    });
+}
+
+
+//for dom
+
+export function dateTimeFormat(dateTime) {
     // check if date time is a DATE object 
     // if yes proceed on parsing
     // if not show an error
@@ -34,6 +95,5 @@ export function parseTime(dateTime) {
 
     //display dateTime
     dateTime = `${month}/${year}/${date} ${hours}:${minutes}:${seconds}${amPm}`
-    const parsedDateTime = JSON.stringify(dateTime)
-    return parsedDateTime;
+    return dateTime;
 }

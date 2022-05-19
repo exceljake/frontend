@@ -2,10 +2,6 @@ import {
     users
 } from "../user/user.js"
 
-import {
-    parseTime,
-} from "../helpers.js"
-
 export function Transaction(type, amount) {
 
     this.id = Math.floor(100000 + Math.random() * 900);
@@ -21,7 +17,6 @@ export function Transaction(type, amount) {
 // deposit
 export function deposit(user, amount) {
     let income = createIncome("deposit", amount);
-    income.dateTime = parseTime(income.dateTime);
     user.incomes.push(income);
     user.balance += amount;
     return user;
@@ -43,7 +38,6 @@ export function addIncome(users, amount, mobile) {
     if (!found) return undefined;
 
     let income = createIncome("income", amount);
-    income.dateTime = parseTime(income.dateTime);
     found.balance += amount;
     found.incomes.push(income);
     return found;
@@ -70,7 +64,6 @@ export function withdraw(user, amount) {
     if (user.balance === 0) return undefined;
 
     let expense = createExpense("withdraw", amount);
-    expense.dateTime = parseTime(expense.dateTime);
     user.expenses.push(expense);
     user.balance -= amount;
     return user;
@@ -93,7 +86,6 @@ export function addExpense(users, amount, mobile) {
     if (!found) return undefined;
 
     let expense = createExpense("expense", amount);
-    expense.dateTime = parseTime(expense.dateTime);
     found.balance -= amount;
     found.expenses.push(expense);
     return found;

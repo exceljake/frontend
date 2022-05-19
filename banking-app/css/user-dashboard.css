@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: whitesmoke;
+}
+
+ :root {
+    --main-color-1: gold;
+    --main-color-2: #85bb65;
+    --main-color-3: #000000;
+    --main-color-4: #228B22;
+}
+
+
+/* header and nav */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: whitesmoke;
+    border-right: 5px solid var(--main-color-4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: var(--main-color-4);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: none;
+    background-color: transparent;
+    text-shadow: .5px .5px var(--main-color-3);
+}
+
+.header-button:hover {
+    color: var(--main-color-1);
+}
+
+.budget-app-button {
+    color: var(--main-color-1);
+    text-shadow: .5px .5px var(--main-color-3);
+}
+
+.nav-logo {
+    height: 250px;
+    width: 250px;
+}
+
+.user-dashboard-title-div {
+    width: 80vw;
+    background-color: var(--main-color-1);
+    margin-top: 20px;
+    height: 100px;
+    margin-left: 250px;
+}
+
+.user-dashboard-title-text {
+    font-size: 80px;
+    color: var(--main-color-2);
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px var(--main-color-3);
+    ;
+}
+
+
+/* USER PROFILE CONTENT*/
+
+.user-profile-content {
+    height: 350px;
+    width: 350px;
+    border: 2px solid var(--main-color-3);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 47vw;
+    margin-top: 70px;
+}
+
+.upc-text-details {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    color: var(--main-color-3);
+}
+
+.upc-text-name {
+    font-size: 25px;
+}
+
+.content {
+    margin-left: 250px;
+}
+
+
+/* hide */
+
+.hide {
+    display: none;
+    visibility: hidden;
+}

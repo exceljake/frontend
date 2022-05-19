@@ -128,5 +128,62 @@
 
 - refactor codes -- done
 
+# local storage
+
+### create function setItem
+- takes params item, data
+- will return localStorage.setItem
+
+### create function getItem 
+- takes param item
+
+# PRIO FOR 5/17/22
+
+### Index layout
+- make a paint layout
+- code it on index.html
+
+### Index DOM
+
+- make a JS file index-buttons.js, then make hide functions for functionality of the navbar
+
+- make a localstorage.js file, then call localstorage functions setItem and getItem
+
+- make a register-dom.js
+-- onclick event on the submit button of register, will call createUser function
+-- if createUser succeeds, go to user-dashboard.html (automatic login)
+
+# PRIO FOR 5/18/22
+
+10pm-11:10pm
+
+### Restart register function
+- redo the register function
+- import users, createUser, setItem, getItem
+- call the consts for register params - done
+- onclick function 
+- call the createUser function
+-- if undefined, alert "user already exists"
+-- else window.location "/user.dashboard.html"
+
+
+
+### make a current user in localstorage 
+- will take mobile number
+
+May 18, 2022 10pm — May 19, 2022 5pm
+
+1. Fix register and login system (implement findIndex) 
+
+a. Register 
+- hardcode everything from scratch, console.log every time make changes
+- implement findIndex, instead of find method
+- use unshift so that currentUserIndex will be easy
+
+b. Login
+- hardcode everything, use find index
+
+2. Textcontent user details to user profile
+
 
 
