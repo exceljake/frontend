@@ -35,6 +35,14 @@ nav {
     justify-content: center;
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
 .button-container {
     display: flex;
     flex-direction: column;
@@ -63,6 +71,7 @@ nav {
 .budget-app-button {
     color: var(--main-color-1);
     text-shadow: .5px .5px var(--main-color-3);
+    font-size: 13px;
 }
 
 .nav-logo {

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/icons/savourbank-logo-removebg.png">
+    <title>SavourBank</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-logo-name">
+            <img src="../img/icons/savourbank-logo-removebg.png" alt="logo" class="nav-logo">
+            <div class="nav-bank-name">SavourBank</div>
+        </div>
+        <div class="nav-button-container">
+            <button class="home-button nav-button"> <a href="./index.html">Home</a></button>
+            <button class="login-button nav-button"><a href="./login.html">Login</a></button>
+            <button class="register-button nav-button"><a href="./register.html">Register</a></button>
+        </div>
+    </nav>
+
+    <section class="register-section">
+        <div class="register-content">
+            <div class="logo-register"></div>
+            <div class="register-input-div">
+                <div class="register-title">Register to a new account</div> <br>
+                <form>
+                    <div class="form-item">
+                        <label for="">Fullname:</label> <br>
+                        <input type="text" class="fullname-register" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="">Mobile number:</label> <br>
+                        <input type="number" class="mobile-register" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="">Password:</label> <br>
+                        <input type="password" class="password-register" required>
+                    </div>
+                    <button type="submit" class="register-submit-button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="../js/user/register-dom.js" type="module"></script>
+
+</body>
+
+</html>

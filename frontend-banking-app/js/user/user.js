@@ -20,16 +20,13 @@ export function User(mobile, password, fullname, isAdmin = false) {
     this.expenses = [];
 }
 
-export function getUsers() {
-    return users.filter((u) => u.isAdmin === false);
-}
-
 // create user
 // find user
 // if exisiting, return an error
 // if not, add to the list
 // and then return user
 export function createUser(mobile, password, fullname, isAdmin = false) {
+    mobile = parseInt(mobile);
     let found = users.find((u) => u.mobile === mobile);
 
     if (found) return undefined;
@@ -55,4 +52,10 @@ export function register(mobile, password, fullname) {
 
     if (user !== undefined) return user;
     else return undefined;
+}
+
+export function currentUser(mobile) {
+    mobile = parseInt(mobile);
+    setItem("currentUser", mobile);
+    return true;
 }

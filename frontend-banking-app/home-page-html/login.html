@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/icons/savourbank-logo-removebg.png">
+    <title>SavourBank</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-logo-name">
+            <img src="../img/icons/savourbank-logo-removebg.png" alt="logo" class="nav-logo">
+            <div class="nav-bank-name">SavourBank</div>
+        </div>
+        <div class="nav-button-container">
+            <button class="home-button nav-button"> <a href="./index.html">Home</a></button>
+            <button class="login-button nav-button"><a href="./login.html">Login</a></button>
+            <button class="register-button nav-button"><a href="./register.html">Register</a></button>
+        </div>
+    </nav>
+
+    <section class="login-section">
+        <div class="login-content">
+            <div class="logo-login"></div>
+            <div class="login-input-div">
+                <div class="login-title">Login to your account</div> <br>
+                <form method="post" action="">
+                    <div class="form-item">
+                        <label for="">Mobile number:</label> <br>
+                        <input type="text" class="mobile-login" required>
+                    </div>
+                    <div class="form-item">
+                        <label for="">Password:</label> <br>
+                        <input type="password" class="password-login" required>
+                    </div>
+                    <button type="submit" class="login-submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <button id="load-data-btn">Load Sample Data</button>
+
+    <script src="../js/user/login.js" type="module"></script>
+
+</body>
+
+</html>

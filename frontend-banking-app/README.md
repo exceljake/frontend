@@ -173,17 +173,23 @@
 
 May 18, 2022 10pm — May 19, 2022 5pm
 
-1. Fix register and login system (implement findIndex) 
+1. Fix register and login system - solved 5/20
 
 a. Register 
 - hardcode everything from scratch, console.log every time make changes
 - implement findIndex, instead of find method
 - use unshift so that currentUserIndex will be easy
 
-b. Login
+b. Login 
 - hardcode everything, use find index
 
+# Prio 5/20 
+
 2. Textcontent user details to user profile
+- take mobile number from localstorage (currentUser)
+- get the object
+- access the name, textcontent it to user profile name
+- do the same for mobile number and balance
 
 
 
