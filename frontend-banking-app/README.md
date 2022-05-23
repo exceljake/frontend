@@ -183,13 +183,19 @@ a. Register
 b. Login 
 - hardcode everything, use find index
 
-# Prio 5/20 
+# Prio 5/20 - done
 
 2. Textcontent user details to user profile
 - take mobile number from localstorage (currentUser)
 - get the object
 - access the name, textcontent it to user profile name
 - do the same for mobile number and balance
+
+# 5/23
+
+1. current progress
+- local storage expense
+
 
 
 

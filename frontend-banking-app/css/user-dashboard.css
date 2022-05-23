@@ -134,3 +134,64 @@ a:active {
     display: none;
     visibility: hidden;
 }
+
+
+/* Budget Income, Expense */
+
+.modal-div,
+.modal-div-expense {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    margin: 0;
+}
+
+.income-add,
+.income-submit,
+.expense-add,
+.expense-submit {
+    background-color: #47a386;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+.modal-container,
+.modal-container-expense {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.modal,
+.modal-expense {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 30px 50px;
+    width: 600px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.modal h1,
+.modal-expense h1 {
+    margin: 0;
+}
+
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}

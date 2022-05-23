@@ -28,9 +28,32 @@
             <div class="user-dashboard-title-text income-text">Budget Income</div>
         </div>
 
+        <div class="modal-div">
+            <button class="income-add">
+           Add income
+        </button>
+
+            <div class="modal-container">
+                <div class="modal">
+                    <h1>Please state your new income</h1> <br>
+                    <form action="">
+                        <div class="form-item">
+                            <label for="income-type">Type of Income</label>
+                            <input type="text" class="income-type">
+                        </div> <br>
+                        <div class="form-item">
+                            <label for="income-price">Price of Income</label>
+                            <input type="number" class="income-price">
+                        </div>
+                    </form> <br>
+                    <button class="income-submit">Submit</button>
+                </div>
+            </div>
+        </div>
+
     </section>
 
-
+    <script src="/js/user-dashboard/user-profile-dom.js" type="module"></script>
 </body>
 
 </html>

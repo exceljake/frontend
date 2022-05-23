@@ -1,6 +1,5 @@
-import {
-    users
-} from "../user/user.js"
+import { users } from "../user/user.js";
+import { setItem, getItem } from "../local-storage.js";
 
 export function Transaction(type, amount) {
 
@@ -33,14 +32,16 @@ export function createIncome(type, amount) {
 // for budget app
 // function addIncome
 export function addIncome(users, amount, mobile) {
-    let found = users.find((user) => user.mobile === mobile);
+    let found = users.findIndex((user) => user.mobile === mobile);
 
     if (!found) return undefined;
-
+    parseInt(amount);
+    parseInt(users[found].balance);
     let income = createIncome("income", amount);
-    found.balance += amount;
-    found.incomes.push(income);
-    return found;
+    users[found].balance += Number(amount);
+    users[found].incomes.push(income);
+    setItem("userList", users);
+    return users[found].balance;
 }
 
 //deleteIncome
