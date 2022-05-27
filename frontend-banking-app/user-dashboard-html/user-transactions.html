@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/user-dashboard.css">
     <link rel="icon" href="../img/icons/savourbank-logo-removebg.png">
-    <title>User Profile | SavourBank</title>
+    <title>User Transactions | SavourBank</title>
 </head>
 
 <body>
@@ -18,17 +18,42 @@
             <button class="user-profile header-button"><a href="user-profile.html">User Profile</a></button>
             <button class="user-transactions header-button"><a href="user-transactions.html">User Transactions</a></button>
             <button class="budget-app header-button">Budget App</button>
-            <button class="budget-app-income header-button budget-app-button"><a href="budget-income.html">Income</a></button>
-            <button class="budget-app-expense header-button budget-app-button"><a href="budget-expense.html">Expense</a></button>
+            <button class="budget-app-income header-button budget-app-button hide"><a href="budget-income.html">Income</a></button>
+            <button class="budget-app-expense header-button budget-app-button hide"><a href="budget-expense.html">Expense</a></button>
+            <button class="logout header-button"> <a href="/home-page-html/index.html">Logout</a></button>
         </div>
     </nav>
+
 
     <section class="user-transactions-section">
         <div class="user-dashboard-title-div">
             <div class="user-dashboard-title-text">User Transactions</div>
+        </div> <br>
+
+
+        <div class="table-container-user-transactions">
+            <table class="table-user-transactions table">
+                <thead>
+                    <tr>
+                        <th>Transaction I.D.</th>
+                        <th>Amount</th>
+                        <th>Date and Time</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tr class="last-row">
+                    <td>Total Balance:</td>
+                    <td class="total-balance"></td>
+                    <td></td>
+                </tr>
+            </table>
         </div>
 
+
     </section>
+
+    <script src="../js/user-dashboard/user-transactions.js" type="module"></script>
+    <script src="../js/user-dashboard/nav-user-dashboard.js" type="module"></script>
 
 </body>
 

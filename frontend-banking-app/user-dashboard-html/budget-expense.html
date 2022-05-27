@@ -18,22 +18,25 @@
             <button class="user-profile header-button"><a href="user-profile.html">User Profile</a></button>
             <button class="user-transactions header-button"><a href="user-transactions.html">User Transactions</a></button>
             <button class="budget-app header-button">Budget App</button>
-            <button class="budget-app-income header-button budget-app-button"><a href="budget-income.html">Income</a></button>
-            <button class="budget-app-expense header-button budget-app-button"><a href="budget-expense.html">Expense</a></button>
+            <button class="budget-app-income header-button budget-app-button hide"><a href="budget-income.html">Income</a></button>
+            <button class="budget-app-expense header-button budget-app-button hide"><a href="budget-expense.html">Expense</a></button>
+            <button class="logout header-button"> <a href="/home-page-html/index.html">Logout</a></button>
         </div>
     </nav>
-    <section class="budget-app-expense-section">
-        <div class="user-dashboard-title-div">
-            <div class="user-dashboard-title-text expense-title">Budget Expense</div>
-        </div>
 
+
+    <div class="user-dashboard-title-div">
+        <div class="user-dashboard-title-text expense-title">Budget Expense</div>
+    </div>
+    <section class="expense-modal">
         <div class="modal-div-expense">
             <button class="expense-add">
            Add Expense
         </button>
 
-            <div class="modal-container-expense show">
+            <div class="modal-container-expense">
                 <div class="modal-expense">
+                    <button class="close-expense">X</button>
                     <h1>Please state your new expense</h1> <br>
                     <form action="">
                         <div class="form-item">
@@ -49,9 +52,27 @@
                 </div>
             </div>
         </div>
+    </section>
 
+    <section class="table-section">
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Transaction I.D.</th>
+                        <th>Amount</th>
+                        <th>Date and Time</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+        </div>
+    </section>
+
+    <script src="/js/user-dashboard/budget-expense.js" type="module"></script>
+    <script src="../js/user-dashboard/nav-user-dashboard.js" type="module"></script>
 
     </section>
+
 </body>
 
 </html>

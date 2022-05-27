@@ -97,3 +97,12 @@ export function dateTimeFormat(dateTime) {
     dateTime = `${month}/${year}/${date} ${hours}:${minutes}:${seconds}${amPm}`
     return dateTime;
 }
+
+export function generateRandomPassword() {
+    let randomPassword = [];
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    for (let i = 0; i < 9; i++) {
+        randomPassword.push(characters.charAt(Math.floor(Math.random() * characters.length)));
+    }
+    return randomPassword.join('');
+}

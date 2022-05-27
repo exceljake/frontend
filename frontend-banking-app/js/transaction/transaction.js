@@ -1,12 +1,13 @@
 import { users } from "../user/user.js";
 import { setItem, getItem } from "../local-storage.js";
+import { dateTimeFormat } from "../helpers.js"
 
 export function Transaction(type, amount) {
 
     this.id = Math.floor(100000 + Math.random() * 900);
     this.type = type;
     this.amount = amount;
-    this.dateTime = new Date();
+    this.dateTime = dateTimeFormat(new Date());
 }
 
 /**************************************/
@@ -14,11 +15,19 @@ export function Transaction(type, amount) {
 /**************************************/
 
 // deposit
-export function deposit(user, amount) {
+export function deposit(users, amount, mobile) {
+
+    let found = users.findIndex((user) => user.mobile === mobile);
+
+    if (!found) return undefined;
+
+    parseInt(amount);
+    parseInt(users[found].balance);
     let income = createIncome("deposit", amount);
-    user.incomes.push(income);
-    user.balance += amount;
-    return user;
+    users[found].incomes.push(income);
+    users[found].balance += Number(amount);
+    setItem("userList", users);
+    return income;
 }
 
 // create income
@@ -31,17 +40,18 @@ export function createIncome(type, amount) {
 
 // for budget app
 // function addIncome
-export function addIncome(users, amount, mobile) {
-    let found = users.findIndex((user) => user.mobile === mobile);
+// export function addIncome(type, users, amount, mobile) {
+export function addIncome(type, mobile, amount) {
+
+    let found = users.findIndex((user) => user.mobile === Number(mobile));
 
     if (!found) return undefined;
-    parseInt(amount);
-    parseInt(users[found].balance);
-    let income = createIncome("income", amount);
+
     users[found].balance += Number(amount);
+    let income = createIncome(type, amount);
     users[found].incomes.push(income);
     setItem("userList", users);
-    return users[found].balance;
+    return;
 }
 
 //deleteIncome
@@ -81,16 +91,27 @@ export function createExpense(type, amount) {
 
 //for budget app
 //addExpense
-export function addExpense(users, amount, mobile) {
-    let found = users.find((user) => user.mobile === mobile);
+export function addExpense(type, amount, mobile) {
+    // export function addExpense(mobile) {
+
+    let found = users.findIndex((user) => user.mobile === Number(mobile));
 
     if (!found) return undefined;
 
-    let expense = createExpense("expense", amount);
-    found.balance -= amount;
-    found.expenses.push(expense);
-    return found;
-
+    users[found].balance -= Number(amount);
+    let expense = createExpense(type, amount);
+    users[found].expenses.push(expense)
+    setItem("userList", users);
+    return;
+    // let found = users.findIndex((user) => user.mobile === mobile);
+    // if (!found) return undefined;
+    // parseInt(amount);
+    // parseInt(users[found].balance);
+    // let expense = createExpense("expense", amount);
+    // users[found].balance -= Number(amount);
+    // users[found].expenses.push(expense);
+    // setItem("userList", users);
+    // return users[found].balance;
 }
 
 //deleteExpense
@@ -114,16 +135,23 @@ export function deleteExpense(mobile, transactionId) {
 /*****************************************/
 
 
+// export function transfer(from, to, amount) {
 export function transfer(from, to, amount) {
-    if (from.balance < amount) return undefined;
 
-    from.balance -= amount;
-    to.balance += amount;
-    let send = new Transaction("expense", amount);
-    from.expenses.push(send);
-    let receive = new Transaction("income", amount);
-    to.incomes.push(receive);
-    return true;
+    let fromIndex = users.findIndex((user) => user.mobile === Number(from))
+
+    let toIndex = users.findIndex((user) => user.mobile === Number(to))
+
+    if (users[fromIndex].balance < Number(amount)) return undefined;
+
+    users[fromIndex].balance -= Number(amount);
+    users[toIndex].balance += Number(amount);
+    let send = new Transaction("expense", Number(amount));
+    users[fromIndex].expenses.push(send);
+    let receive = new Transaction("income", Number(amount));
+    users[toIndex].incomes.push(receive);
+    setItem("userList", users);
+    return;
 }
 /*******************************************/
 /**************SHOW HISTORY****************/
@@ -136,10 +164,11 @@ export function showHistory(users, mobile) {
     let existing = users.find((user) => user.mobile === mobile);
 
     if (!existing) return undefined;
-
-    let transactionHistory = (existing.incomes).concat(existing.expenses);
-    transactionHistory.sort(byDate);
-    return transactionHistory;
+    else {
+        let transactionHistory = (existing.incomes).concat(existing.expenses);
+        transactionHistory.sort(byDate);
+        return transactionHistory;
+    }
 }
 
 
@@ -158,12 +187,12 @@ export function totalBalanceTransactionHistory(users, mobile) {
     if (!existing) return undefined;
 
     let totalIncome = existing.incomes.reduce(
-        (partialSum, income) => partialSum + income.amount,
+        (partialSum, income) => Number(partialSum) + Number(income.amount),
         0
     );
 
     let totalExpense = existing.expenses.reduce(
-        (partialSum, expense) => partialSum - expense.amount,
+        (partialSum, expense) => Number(partialSum) - Number(expense.amount),
         0
     );
 

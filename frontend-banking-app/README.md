@@ -194,8 +194,54 @@ b. Login
 # 5/23
 
 1. current progress
-- local storage expense
+- local storage income - done
+- local storage expense - done
 
+# PRio for 5/24 - 26
+
+1. Print the incomes and expenses on a table --- done incomes   
+- every add income and add expense will immediately be added on the table - done
+
+2. Show the total balance of incomes and expense on transactions - done
+
+3. Make delete button functional
+
+3. Print the user transactions containing all the incomes and expenses of user - done
+
+4. Finish the user-dashboard by checking every section, clean the sections if needed
+
+# Prio for 5/27
+
+1. Make admin page (design is like the user dashboard) - done
+2. List of nav buttons - done
+a. Transact - done
+- can deposit 
+- can withdraw
+- can transfer 
+b. Create User - done 
+- can create user with starting balance or without starting balance
+- create function random password generator
+- mobile, password, fullname, initial balance
+c. List of users - done
+- Mobile
+- Fullname 
+- Balance
+
+# Prio for 5/28 - done
+
+1. Design
+- design of transact functions 
+a. deposit
+b. withdraw
+c. transfer
+
+2. nav button hide 3 functions of transact
+- onclick will show 3 extra nav buttons
+- onclick again will hide
+
+
+# Last functionality 
+- delete expense/income
 
 
 

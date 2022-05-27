@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/user-dashboard.css">
     <link rel="icon" href="../img/icons/savourbank-logo-removebg.png">
-    <title>User Profile | SavourBank</title>
+    <title>Budget Income | SavourBank</title>
 </head>
 
 <body>
@@ -18,42 +18,60 @@
             <button class="user-profile header-button"><a href="user-profile.html">User Profile</a></button>
             <button class="user-transactions header-button"><a href="user-transactions.html">User Transactions</a></button>
             <button class="budget-app header-button">Budget App</button>
-            <button class="budget-app-income header-button budget-app-button"><a href="budget-income.html">Income</a></button>
-            <button class="budget-app-expense header-button budget-app-button"><a href="budget-expense.html">Expense</a></button>
+            <button class="budget-app-income header-button budget-app-button hide"><a href="budget-income.html">Income</a></button>
+            <button class="budget-app-expense header-button budget-app-button hide"><a href="budget-expense.html">Expense</a></button>
+            <button class="logout header-button"> <a href="/home-page-html/index.html">Logout</a></button>
         </div>
     </nav>
 
-    <section class="budget-app-income-section">
-        <div class="user-dashboard-title-div">
-            <div class="user-dashboard-title-text income-text">Budget Income</div>
-        </div>
 
+    <div class="user-dashboard-title-div">
+        <div class="user-dashboard-title-text income-text">Budget Income</div>
+    </div>
+
+    <section class="modal-section">
         <div class="modal-div">
-            <button class="income-add">
-           Add income
-        </button>
-
             <div class="modal-container">
                 <div class="modal">
+                    <button class="close-income">X</button>
                     <h1>Please state your new income</h1> <br>
                     <form action="">
                         <div class="form-item">
                             <label for="income-type">Type of Income</label>
-                            <input type="text" class="income-type">
+                            <input type="text" class="income-type" required>
                         </div> <br>
                         <div class="form-item">
                             <label for="income-price">Price of Income</label>
-                            <input type="number" class="income-price">
+                            <input type="number" class="income-price" required>
                         </div>
                     </form> <br>
                     <button class="income-submit">Submit</button>
                 </div>
             </div>
+            <button class="income-add">
+                Add income
+             </button>
         </div>
-
     </section>
 
-    <script src="/js/user-dashboard/user-profile-dom.js" type="module"></script>
+    <section class="table-section">
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Transaction I.D.</th>
+                        <th>Amount</th>
+                        <th>Date and Time</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+        </div>
+    </section>
+
+
+
+    <script src="/js/user-dashboard/budget-income.js" type="module"></script>
+    <script src="../js/user-dashboard/nav-user-dashboard.js" type="module"></script>
 </body>
 
 </html>

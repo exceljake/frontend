@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="icon" href="../img/icons/savourbank-logo-removebg.png">
+    <title>Create User | SavourBank</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="img-container"> <img src="../img/icons/savourbank-logo-name-removebg.png" class="nav-logo" alt=""></div>
+        <div class="nav-title">Admin Dashboard</div>
+        <div class="button-container">
+            <button class="create-user header-button"><a href="./create-user.html">Create User</a></button>
+            <button class="list-of-users header-button"><a href="/admin-dashboard-html/user-list.html">User List</a></button>
+            <button class="budget-app header-button transact-nav-button">Transact</button>
+            <button class="deposit header-button transact-button deposit-nav-button hide"><a href="./deposit.html">Deposit</a></button>
+            <button class="withdraw header-button transact-button withdraw-nav-button hide"><a href="./withdraw.html">Withdraw</a></button>
+            <button class="transfer header-button transact-button transfer-nav-button hide"><a href="./transfer.html">Transfer</a></button>
+            <button class="logout header-button"> <a href="../home-page-html/index.html">Logout</a></button>
+        </div>
+    </nav>
+
+    <section class="create-user">
+        <div class="user-dashboard-title-div">
+            <div class="user-dashboard-title-text expense-title">Create User</div>
+        </div> <br> <br>
+
+        <div class="create-user-container">
+            <div class="create-user-content">
+                <form>
+                    <div class="create-user-title">Create a New User</div> <br>
+                    <div class="form-item">
+                        <label for="mobile" class="input-title">Mobile Number:</label>
+                        <input type="number" class="mobile">
+                    </div> <br>
+                    <div class="form-item">
+                        <label for="fullname" class="input-title">Fullname:</label>
+                        <input type="text" class="fullname">
+                    </div> <br>
+                    <div class="form-item">
+                        <label for="balance" class="input-title">Initial Balance:</label>
+                        <input type="number" class="balance">
+                    </div> <br>
+                    <div class="create-user-submit-div">
+                        <button type="submit" class="create-user-submit">Create User</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/admin-dashboard/create-user.js" type="module"></script>
+    <script src="../js/admin-dashboard/admin-dashboard-nav.js"></script>
+</body>
+
+</html>

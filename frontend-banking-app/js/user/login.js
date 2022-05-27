@@ -17,12 +17,16 @@ loginSubmitBtn.onclick = function(e) {
     e.preventDefault();
 
     let result = login(mobile.value, password.value);
-    if (result !== undefined && result.isAdmin) {
-        window.location = "/admin-dashboard.html";
-        currentUser(mobile.value);
+    if (result === undefined) alert("Wrong or missing credentials. Please try again!");
+    else {
+        if (result !== undefined && result.isAdmin) {
+            window.location = "/admin-dashboard-html/admin-dashboard.html";
+            alert("Welcome Admin!")
+            currentUser(mobile.value);
+        } else {
+            window.location = "/user-dashboard-html/user-profile.html";
+            alert(`Welcome ${result.fullname}!`)
+            currentUser(mobile.value);
+        }
     }
-    if (result !== undefined && result.isAdmin === false) {
-        window.location = "/user-dashboard-html/user-profile.html";
-        currentUser(mobile.value);
-    } else alert("Wrong credentials!");
 }

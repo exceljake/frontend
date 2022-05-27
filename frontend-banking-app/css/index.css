@@ -158,18 +158,70 @@ a:active {
 
 /* REGISTER CONTENT */
 
-
-/* .register {
-    position: absolute;
-    width: 1000px;
-} */
-
-.register-content {
+.register-content,
+.login-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
     padding: 30px 50px;
+}
+
+.register-input-div,
+.login-input-div {
+    width: 300px;
+    height: 350px;
+    background-color: var(--main-color-2);
+    border: 5px solid var(--main-color-2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fullname-register,
+.mobile-register,
+.password-register,
+.mobile-login,
+.password-login {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .1);
+}
+
+.register-title,
+.login-title {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.input-title {
+    font-weight: 600;
+}
+
+.form-item-submit {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-submit-button,
+.login-submit {
+    background-color: transparent;
+    border: 2px solid black;
+    font-size: 13px;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.register-submit-button:hover,
+.login-submit:hover {
+    background-color: burlywood;
 }
 
 .logo-register {

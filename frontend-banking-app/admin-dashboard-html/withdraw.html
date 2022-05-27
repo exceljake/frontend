@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="icon" href="../img/icons/savourbank-logo-removebg.png">
+    <title>User List | SavourBank</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="img-container"> <img src="../img/icons/savourbank-logo-name-removebg.png" class="nav-logo" alt=""></div>
+        <div class="nav-title">Admin Dashboard</div>
+        <div class="button-container">
+            <button class="create-user header-button"><a href="./create-user.html">Create User</a></button>
+            <button class="list-of-users header-button"><a href="/admin-dashboard-html/user-list.html">User List</a></button>
+            <button class="budget-app header-button transact-nav-button">Transact</button>
+            <button class="deposit header-button transact-button deposit-nav-button hide"><a href="./deposit.html">Deposit</a></button>
+            <button class="withdraw header-button transact-button withdraw-nav-button hide"><a href="./withdraw.html">Withdraw</a></button>
+            <button class="transfer header-button transact-button transfer-nav-button hide"><a href="./transfer.html">Transfer</a></button>
+            <button class="logout header-button"> <a href="../home-page-html/index.html">Logout</a></button>
+        </div>
+    </nav>
+
+    <section class="withdraw-section">
+        <div class="user-dashboard-title-div">
+            <div class="user-dashboard-title-text expense-title">Withdraw</div>
+        </div>
+
+        <div class="withdraw-container">
+            <div class="withdraw-content">
+                <form>
+                    <div class="withdraw-title">Withdraw from an account</div> <br>
+                    <div class="form-item"> <br>
+                        <label for="mobile" class="input-title">Mobile Number:</label>
+                        <input type="number" class="mobile-withdraw">
+                    </div> <br>
+                    <div class="form-item"> <br>
+                        <label for="amount" class="input-title">Amount to be withdrawn:</label>
+                        <input type="number" class="amount-withdraw">
+                    </div> <br>
+                    <div class="withdraw-submit-div">
+                        <button class="withdraw-submit">Withdraw</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/admin-dashboard/admin-dashboard-nav.js"></script>
+    <script src="../js/admin-dashboard/withdraw.js" type="module"></script>
+</body>
+
+</html>

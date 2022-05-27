@@ -163,11 +163,11 @@ function divChange() {
 }
 setInterval(divChange, 2000)
 
-document.getElementById("addQuoteButton").onclick = function addArray() {
-    var name = document.getElementById("addQuote").value;
-    quotes.push(name);
-    alert("Thank you for adding a new quote!");
-}
+// document.getElementById("addQuoteButton").onclick = function addArray() {
+//     var name = document.getElementById("addQuote").value;
+//     quotes.push(name);
+//     alert("Thank you for adding a new quote!");
+// }
 
 //SHOW/HIDE TODO LIST
 

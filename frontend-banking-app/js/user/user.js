@@ -25,13 +25,14 @@ export function User(mobile, password, fullname, isAdmin = false) {
 // if exisiting, return an error
 // if not, add to the list
 // and then return user
-export function createUser(mobile, password, fullname, isAdmin = false) {
+export function createUser(mobile, password, fullname, balance, isAdmin = false) {
     mobile = parseInt(mobile);
     let found = users.find((u) => u.mobile === mobile);
 
     if (found) return undefined;
 
     let user = new User(mobile, password, fullname, isAdmin);
+    user.balance += Number(balance);
     users.push(user);
     setItem("userList", users);
     return user;
