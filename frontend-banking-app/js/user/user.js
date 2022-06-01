@@ -25,13 +25,13 @@ export function User(mobile, password, fullname, isAdmin = false) {
 // if exisiting, return an error
 // if not, add to the list
 // and then return user
-export function createUser(mobile, password, fullname, balance, isAdmin = false) {
-    mobile = parseInt(mobile);
+export function createUser(mobile, password, fullname, balance) {
+    mobile = Number(mobile);
     let found = users.find((u) => u.mobile === mobile);
 
     if (found) return undefined;
 
-    let user = new User(mobile, password, fullname, isAdmin);
+    let user = new User(mobile, password, fullname);
     user.balance += Number(balance);
     users.push(user);
     setItem("userList", users);
@@ -39,13 +39,16 @@ export function createUser(mobile, password, fullname, balance, isAdmin = false)
 }
 
 export function login(mobile, password) {
-    mobile = parseInt(mobile);
-    let found = users.find((u) => u.mobile === mobile);
+    let found = users.find((u) => u.mobile === Number(mobile));
 
-    if (!found) return undefined;
-    if (!found || !found.mobile === mobile || !found.password === password)
+    if (!found) {
         return undefined;
-    return found;
+    }
+    if (found.password !== password) {
+        return undefined;
+    } else {
+        return found;
+    }
 }
 
 export function register(mobile, password, fullname) {

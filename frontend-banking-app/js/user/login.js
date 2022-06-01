@@ -1,4 +1,4 @@
-import { createUser, login } from "./user.js";
+import { login } from "./user.js";
 import { loadData } from "../helpers.js";
 import { currentUser } from "./user.js"
 
@@ -15,18 +15,20 @@ loadBtn.onclick = function(e) {
 
 loginSubmitBtn.onclick = function(e) {
     e.preventDefault();
-
-    let result = login(mobile.value, password.value);
-    if (result === undefined) alert("Wrong or missing credentials. Please try again!");
+    if (Number(mobile.value) === "" || password.value === "") alert("Missing credentials, please try again!");
     else {
-        if (result !== undefined && result.isAdmin) {
-            window.location = "/admin-dashboard-html/admin-dashboard.html";
-            alert("Welcome Admin!")
-            currentUser(mobile.value);
-        } else {
-            window.location = "/user-dashboard-html/user-profile.html";
-            alert(`Welcome ${result.fullname}!`)
-            currentUser(mobile.value);
+        let result = login(mobile.value, password.value);
+        if (result === undefined) alert("Wrong credentials. Please try again!");
+        else {
+            if (result !== undefined && result.isAdmin) {
+                window.location = "/admin-dashboard-html/create-user.html";
+                alert("Welcome Admin!")
+                currentUser(mobile.value);
+            } else {
+                window.location = "/user-dashboard-html/user-profile.html";
+                alert(`Welcome ${result.fullname}!`)
+                currentUser(mobile.value);
+            }
         }
     }
 }

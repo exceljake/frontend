@@ -1,12 +1,8 @@
 import { createUser } from "./user/user.js";
+import { setItem } from "./local-storage.js";
+import { users } from "./user/user.js";
 
 export let userInitialData = [{
-        fullname: "admin",
-        mobile: 9193552644,
-        password: "admin",
-        isAdmin: true,
-    },
-    {
         fullname: "user1",
         mobile: 9293552644,
         password: "password1",
@@ -50,10 +46,22 @@ export let userInitialData = [{
     }
 ];
 
+function addAdmin() {
+    const admin = {
+        fullname: "admin",
+        mobile: 9193552644,
+        password: "admin",
+        isAdmin: true,
+    };
+    users.push(admin);
+    setItem("userList", users);
+}
+
 export function loadData() {
     userInitialData.forEach((d) => {
         return createUser(d.mobile, d.password, d.fullname, d.isAdmin);
     });
+    addAdmin();
 }
 
 

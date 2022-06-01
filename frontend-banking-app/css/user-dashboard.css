@@ -12,7 +12,7 @@ body {
 }
 
  :root {
-    --main-color-1: gold;
+    /* --main-color-1: gold; */
     --main-color-2: #85bb65;
     --main-color-3: #000000;
     --main-color-4: #228B22;
@@ -83,7 +83,7 @@ a:active {
 
 .user-dashboard-title-div {
     width: 80vw;
-    background-color: var(--main-color-1);
+    background-color: rgba(133, 187, 101, 0.9);
     margin-top: 20px;
     height: 100px;
     margin-left: 250px;
@@ -91,10 +91,10 @@ a:active {
 
 .user-dashboard-title-text {
     font-size: 80px;
-    color: var(--main-color-2);
+    color: var(--main-color-3);
     text-align: center;
     font-family: 'Dancing Script', cursive;
-    text-shadow: 2px 2px var(--main-color-3);
+    text-shadow: 2px 2px var(--main-color-4);
     ;
 }
 
@@ -157,15 +157,18 @@ a:active {
 
 .income-add,
 .income-submit,
+.income-delete,
 .expense-add,
-.expense-submit {
-    background-color: #47a386;
+.expense-submit,
+.expense-delete {
+    background-color: var(--main-color-2);
     border: 0;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: #fff;
     font-size: 14px;
     padding: 10px 25px;
+    cursor: pointer;
 }
 
 .income-add,
@@ -173,6 +176,14 @@ a:active {
     position: absolute;
     bottom: 0;
     right: 0;
+}
+
+.income-delete,
+.expense-delete {
+    position: absolute;
+    bottom: 0;
+    left: 300px;
+    cursor: pointer;
 }
 
 .modal-container,
@@ -216,7 +227,7 @@ a:active {
     position: absolute;
     right: 300px;
     top: 180px;
-    background-color: #47a386;
+    background-color: var(--main-color-2);
     color: white;
     font-weight: 900;
 }

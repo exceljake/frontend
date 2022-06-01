@@ -241,7 +241,15 @@ c. transfer
 
 
 # Last functionality 
-- delete expense/income
+- delete expense/income - done
+
+# Finishing up
+
+1. Change the name of inappropriate files - done
+2. Check the login and register for correction of logic - done
+- if nothing inputted, or lacking an input, should return "Wrong of insufficient creds! Please try again!"
+- if wrong input, should return "User already exists!"
+3. FInalization of design - done
 
 
 

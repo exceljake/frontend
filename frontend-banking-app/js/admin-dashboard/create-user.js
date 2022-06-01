@@ -7,6 +7,6 @@ const balance = document.querySelector('.balance')
 const create = document.querySelector('.create-user-submit')
 
 create.onclick = function adminCreateUser() {
-    let create = createUser(mobile.value, generateRandomPassword(), fullName.value, balance.value);
-    alert(create.balance);
-}
+    let create = createUser(Number(mobile.value), generateRandomPassword(), fullName.value, Number(balance.value));
+    alert("Created new account!");
+};

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 * {
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
 }
 
  :root {
-    --main-color-1: gold;
+    /* --main-color-1: gold; */
     --main-color-2: #85bb65;
     --main-color-3: #000000;
     --main-color-4: #228B22;
@@ -35,6 +35,11 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.nav-title {
+    font-weight: 600;
+    font-size: 20px;
 }
 
 a,
@@ -83,7 +88,7 @@ a:active {
 
 .user-dashboard-title-div {
     width: 80vw;
-    background-color: var(--main-color-1);
+    background-color: var(--main-color-2);
     margin-top: 20px;
     height: 100px;
     margin-left: 250px;
@@ -91,10 +96,10 @@ a:active {
 
 .user-dashboard-title-text {
     font-size: 80px;
-    color: var(--main-color-2);
+    color: var(--main-color-3);
     text-align: center;
     font-family: 'Dancing Script', cursive;
-    text-shadow: 2px 2px var(--main-color-3);
+    text-shadow: 2px 2px var(--main-color-4);
     ;
 }
 
@@ -124,7 +129,8 @@ a:active {
     margin-top: 20px;
     width: 300px;
     height: 350px;
-    background-color: var(--main-color-2);
+    border-left: 5px solid var(--main-color-2);
+    border-right: 5px solid var(--main-color-2);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -162,7 +168,7 @@ a:active {
     border: none;
     padding: 15px 20px;
     border-radius: 25px;
-    background: rgba(255, 255, 255, .1);
+    background: rgba(133, 187, 101);
     width: 235px;
 }
 
@@ -184,25 +190,24 @@ a:active {
 .deposit-submit,
 .withdraw-submit,
 .transfer-submit {
-    /* background-color: var(--main-color-1); */
     width: 100px;
     height: 30px;
     font-weight: 700;
     font-size: 20px;
-    /* border: 1.5px solid black;
-    border-radius: 5px; */
-    background-color: black;
-    border: 1px solid black;
-    border-radius: 5px;
-    color: #85bb65;
+    background-color: var(--main-color-2);
+    border: var(--main-color-2);
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.create-user-submit:hover,
+
+/* .create-user-submit:hover,
 .deposit-submit:hover,
 .withdraw-submit:hover,
 .transfer-submit:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}
+} */
 
 
 /* DEPOSIT  */

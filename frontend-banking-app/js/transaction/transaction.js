@@ -15,20 +15,20 @@ export function Transaction(type, amount) {
 /**************************************/
 
 // deposit
-export function deposit(users, amount, mobile) {
+// export function deposit(users, amount, mobile) {
 
-    let found = users.findIndex((user) => user.mobile === mobile);
+//     let found = users.findIndex((user) => user.mobile === mobile);
 
-    if (!found) return undefined;
+//     if (!found) return undefined;
 
-    parseInt(amount);
-    parseInt(users[found].balance);
-    let income = createIncome("deposit", amount);
-    users[found].incomes.push(income);
-    users[found].balance += Number(amount);
-    setItem("userList", users);
-    return income;
-}
+//     parseInt(amount);
+//     parseInt(users[found].balance);
+//     let income = createIncome("deposit", amount);
+//     users[found].incomes.push(income);
+//     users[found].balance += Number(amount);
+//     setItem("userList", users);
+//     return income;
+// }
 
 // create income
 // purpose is to create a new transaction
@@ -42,28 +42,16 @@ export function createIncome(type, amount) {
 // function addIncome
 // export function addIncome(type, users, amount, mobile) {
 export function addIncome(type, mobile, amount) {
-
-    let found = users.findIndex((user) => user.mobile === Number(mobile));
+    // JSON.stringify(mobile);
+    let found = users.find((user) => user.mobile === Number(mobile));
 
     if (!found) return undefined;
 
-    users[found].balance += Number(amount);
+    found.balance += Number(amount);
     let income = createIncome(type, amount);
-    users[found].incomes.push(income);
+    found.incomes.push(income);
     setItem("userList", users);
     return;
-}
-
-//deleteIncome
-export function deleteIncome(mobile, transactionId) {
-    let found = users.find((user) => user.mobile === mobile);
-
-    if (!found) return undefined;
-
-    let foundId = found.incomes.find((transaction) => transaction.id === transactionId);
-
-    found.balance -= foundId.amount; //updating the balance
-    return found;
 }
 
 /**************************************/
@@ -71,14 +59,14 @@ export function deleteIncome(mobile, transactionId) {
 /**************************************/
 
 // withdraw
-export function withdraw(user, amount) {
-    if (user.balance === 0) return undefined;
+// export function withdraw(user, amount) {
+//     if (user.balance === 0) return undefined;
 
-    let expense = createExpense("withdraw", amount);
-    user.expenses.push(expense);
-    user.balance -= amount;
-    return user;
-}
+//     let expense = createExpense("withdraw", amount);
+//     user.expenses.push(expense);
+//     user.balance -= amount;
+//     return user;
+// }
 
 // create expense
 // purpose is to create a new transaction
@@ -94,64 +82,38 @@ export function createExpense(type, amount) {
 export function addExpense(type, amount, mobile) {
     // export function addExpense(mobile) {
 
-    let found = users.findIndex((user) => user.mobile === Number(mobile));
+    let found = users.find((user) => user.mobile === Number(mobile));
 
     if (!found) return undefined;
 
-    users[found].balance -= Number(amount);
+    found.balance -= Number(amount);
     let expense = createExpense(type, amount);
-    users[found].expenses.push(expense)
+    found.expenses.push(expense)
     setItem("userList", users);
-    return;
-    // let found = users.findIndex((user) => user.mobile === mobile);
-    // if (!found) return undefined;
-    // parseInt(amount);
-    // parseInt(users[found].balance);
-    // let expense = createExpense("expense", amount);
-    // users[found].balance -= Number(amount);
-    // users[found].expenses.push(expense);
-    // setItem("userList", users);
-    // return users[found].balance;
-}
-
-//deleteExpense
-//the function finds object through identifier mobile
-// then it finds an object inside the expenses through identifier transactionId
-//then gets the amount from the found object
-//adds it to the user balance
-
-export function deleteExpense(mobile, transactionId) {
-    let found = users.find((user) => user.mobile === mobile);
-
-    if (!found) return undefined;
-
-    let foundId = found.expenses.find((transaction) => transaction.id === transactionId);
-
-    found.balance += foundId.amount;
     return found;
 }
+
 /*******************************************/
 /**************TRANSFER********************/
 /*****************************************/
 
-
-// export function transfer(from, to, amount) {
 export function transfer(from, to, amount) {
-
     let fromIndex = users.findIndex((user) => user.mobile === Number(from))
 
     let toIndex = users.findIndex((user) => user.mobile === Number(to))
 
-    if (users[fromIndex].balance < Number(amount)) return undefined;
-
-    users[fromIndex].balance -= Number(amount);
-    users[toIndex].balance += Number(amount);
-    let send = new Transaction("expense", Number(amount));
-    users[fromIndex].expenses.push(send);
-    let receive = new Transaction("income", Number(amount));
-    users[toIndex].incomes.push(receive);
-    setItem("userList", users);
-    return;
+    if (users[fromIndex].balance < Number(amount)) {
+        return undefined;
+    } else {
+        users[fromIndex].balance -= Number(amount);
+        users[toIndex].balance += Number(amount);
+        let send = new Transaction("expense", Number(amount));
+        users[fromIndex].expenses.push(send);
+        let receive = new Transaction("income", Number(amount));
+        users[toIndex].incomes.push(receive);
+        setItem("userList", users);
+        return true;
+    }
 }
 /*******************************************/
 /**************SHOW HISTORY****************/
